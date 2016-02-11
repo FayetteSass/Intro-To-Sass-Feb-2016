@@ -135,6 +135,8 @@ header {
 }
 
 .section {
+  overflow: hidden;
+  *zoom: 1;
   padding: 5rem 0;
   text-align: center;
 }
@@ -217,6 +219,80 @@ p.dynamic-text-color-2 {
 }
 p.dynamic-text-color-2:before {
   content: "ocean";
+}
+
+.item-0, .item-1, .item-2, .item-3, .item-4, .item-5, .item-6, .item-7, .item-8, .item-9, .item-10 {
+  display: inline-block;
+  float: left;
+  margin: 0 0 2rem;
+  padding: 1rem 0;
+  background-color: #FF4132;
+  color: #FFF;
+  outline: 1px solid #FFF;
+}
+
+.item-0 {
+  width: 0%;
+}
+
+.item-1 {
+  width: 10%;
+}
+
+.item-2 {
+  width: 20%;
+}
+
+.item-3 {
+  width: 30%;
+}
+
+.item-4 {
+  width: 40%;
+}
+
+.item-5 {
+  width: 50%;
+}
+
+.item-6 {
+  width: 60%;
+}
+
+.item-7 {
+  width: 70%;
+}
+
+.item-8 {
+  width: 80%;
+}
+
+.item-9 {
+  width: 90%;
+}
+
+.item-10 {
+  width: 100%;
+}
+
+.countdown-5:before {
+  content: "5";
+}
+
+.countdown-4:before {
+  content: "4";
+}
+
+.countdown-3:before {
+  content: "3";
+}
+
+.countdown-2:before {
+  content: "2";
+}
+
+.countdown-1:before {
+  content: "1";
 }
 
 .btn--facebook {

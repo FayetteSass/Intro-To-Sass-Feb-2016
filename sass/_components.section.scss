@@ -1,6 +1,10 @@
 $odd-bg-color: #000 !default;
 
+@import 'compass/utilities/general/clearfix';
+
 .section {
+    @include clearfix();
+
     padding: 5rem 0;
     text-align: center;
 

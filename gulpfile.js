@@ -17,6 +17,9 @@ gulp.task('css', function() {
         sass: config.sassDir,
         image: config.imageDir
     }))
+    .on('error', function(err) {
+        this.emit('end');
+    })
     .pipe(autoprefixer({
         browsers: ['last 2 versions']
     }))

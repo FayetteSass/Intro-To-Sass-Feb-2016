@@ -244,39 +244,76 @@ p.dynamic-text-color-2 {
 }
 
 //* @for
+%item {
+  display: inline-block;
+  float: left;
+  margin: 0 0 2rem;
+  padding: 1rem 0;
+  background-color: $primary-color;
+  color: #FFF;
+  outline: 1px solid #FFF;
+}
 
-//* @each
-$networkColors: (
-    facebook: #3B5998,
-    twitter: #55ACEE,
-    google: #DD4B39,
-);
+$widths: 10;
 
-@each $network in $networkColors {
-    $name:  nth($network, 1);
-    $color: nth($network, 2);
-
-    .btn--#{$name} {
-        @extend %btn;
-
-        @if(type-of($color) != map) {
-            background-color: $color;
-
-            &:hover {
-                background-color: darken($color, 20%);
-            }
-        }
-    }
+@for $i from 0 through $widths {
+  .item-#{$i} { 
+    @extend %item;
+    width: $i * 10%;
+  }
 }
 
 //* @while
+$x: 5;
+@while $x > 0 {
+  .countdown-#{$x} {
+    &:before {
+      content: '#{$x}';
+    }
+  }
 
-// $media: screen;
-// $feature: min-width;
-// $value: 45em;
+  $x: $x - 1;
+}
 
-// @media #{$media} and (#{$feature}: #{$value}) {
-//   .section {
-//     background-color: $primary-color;
-//   }
+//* @each
+$networkColors: (
+  facebook: #3B5998,
+  twitter: #55ACEE,
+  google: #DD4B39,
+);
+
+@each $network in $networkColors {
+  $name:  nth($network, 1);
+  $color: nth($network, 2);
+
+  .btn--#{$name} {
+    @extend %btn;
+
+    @if(type-of($color) != map) {
+      background-color: $color;
+
+      &:hover {
+        background-color: darken($color, 20%);
+      }
+    }
+  }
+}
+
+//* @mixin
+@mixin large-font {
+  font-size: 36px;
+}
+
+// h2 {
+//   @include large-font;
+// }
+
+@mixin hero-title($color) {
+  font-size: 48px;
+  text-transform: uppercase;
+  color: $color;
+}
+
+// h2 {
+//   @include hero-title($primary-color);
 // }
