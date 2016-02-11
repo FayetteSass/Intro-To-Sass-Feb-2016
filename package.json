@@ -1,0 +1,16 @@
+{
+  "name": "sassisawesome",
+  "version": "1.0.0",
+  "description": "## Code Structure",
+  "main": "gulpfile.js",
+  "directories": {},
+  "scripts": {},
+  "author": "Andrew Brewer",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-cssnano": "^2.1.0"
+  }
+}

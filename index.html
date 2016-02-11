@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Let's Get Sassy</title>
+
+    <link href='/css/normalize.css' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700|Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <h1 class="site-title">Let's Get Sassy</h1>        
+    </header>
+
+    <div class="section">
+        <h2>You Can Nest Selectors</h2>
+        <div class="wrapper uppercase">
+            <p>I'm nested in the box, so I'm all caps.</p>
+        </div>
+        <p>I'm outside the box, so I'm not all caps.</p>
+    </div>
+
+    <div class="section odd">
+        <h2>You Can Also Reference Parent Selectors</h2>
+
+        <div class="wrapper wrapper--white">
+            <p class="nested">My parent makes me white.</p>
+        </div>
+
+        <div class="wrapper wrapper--red">
+            <p class="nested">My parent makes me red.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>Namespacing is Awesome</h2>
+
+        <p class="namespaced namespaced-font">My font attributes are namespaced.</p>
+        
+        <p class="namespaced namespaced-border">My border attributes are namespaced.</p>
+    </div>
+
+    <div class="section odd use-variables">
+        <h2>Variables</h2>
+
+        <h3 >I'm a header 3 using our $primary-color variable</h3>
+        
+        <ul>
+            <li>I'm a list item using our $primary-color variable</li>
+            <li>I'm a list item using our $primary-color variable</li>
+        </ul>
+        
+        <p>I'm a paragraph using our $primary-color variable</p>
+    </div>
+
+    <div class="section">
+        <h2>Number Operations</h2>
+
+        <p class="font-size-addition">My font size is 10px + 10px.</p>
+        <p class="font-size-subtraction">My font size is 30px - 10px.</p>
+        <p class="font-size-multiplication">My font size is 4px * 5.</p>
+        <p class="font-size-division">My font size is 200px / 10.</p>
+    </div>
+
+    <div class="section odd">
+        <h2>Color Operations</h2>
+
+        <p class="font-color-addition">My font color is #010101 + #AFAFAF.</p>
+        <p class="font-color-subtraction">My font color is #EE9009 - #9FCF00.</p>
+        <p class="font-color-darken">My font color is $primary-color darkened by 20%</p>
+        <p class="font-color-lighten">My font color is $primary-color lightened by 20%</p>
+
+        <div class="wrapper background-color-opacify">
+            <p>My background color has an alpha of 0.5 + 0.3.</p>
+        </div>
+        <div class="wrapper background-color-transparentize">
+            <p>My background color has an alpha of 0.5 - 0.3.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>@extend</h2>
+
+        <a href="" class="btn--primary">Primary Button</a>
+        <a href="" class="btn--secondary">Primary Button</a>
+
+        <div class="notification">
+            <p class="error">This is an error message</p>
+            <p class="success">This is a success message</p>
+        </div>
+    </div>
+
+    <div class="section odd">
+        <h2>@at-root</h2>
+
+        <div class="parent">
+            <p class="child-1">Child 1</p>
+            <p class="child-2">Child 2</p>
+            <p class="child-3">Child 3</p>
+            <p class="child-4">Child 4</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>@if</h2>
+
+        <div class="wrapper dynamic-text-color">
+            <p>This text changes based on the background color.</p>
+        </div>
+
+        <p class="dynamic-text-color-2"></p>
+    </div>
+
+    <div class="section odd">
+        <h2>@for</h2>
+    </div>
+
+    <div class="section">
+        <h2>@each</h2>
+
+        <a href="" class="btn--facebook">Facebook</a>
+        <a href="" class="btn--twitter">Twitter</a>
+        <a href="" class="btn--google">Google</a>
+    </div>
+
+</body>
+</html>

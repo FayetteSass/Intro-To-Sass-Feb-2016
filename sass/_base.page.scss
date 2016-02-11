@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 2rem;
+}
+
+p,
+ul,
+ol,
+li,
+a,
+span {
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    
+    li {
+        list-style: none;
+    }
+}
+
+header {
+    background-color: #FF4132;
+    padding: 3rem;
+}
+
+.site-title {
+    font-size: 60px;
+    text-align: center;
+    margin: 0;
+    color: #FFF;
+}
+
+.wrapper {
+  border: 1px solid #999;
+  margin: 0 auto 1rem;
+  width: 50%;
+}

@@ -1,0 +1,241 @@
+.uppercase p {
+  text-transform: uppercase;
+}
+
+.nested:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.wrapper--white .nested {
+  color: #FFF;
+}
+.wrapper--red .nested {
+  color: #FF4132;
+}
+
+.namespaced {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+.namespaced-font {
+  font-family: 'Roboto', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.namespaced-border {
+  border-width: 2px;
+  border-color: #FF4132;
+  border-style: dashed;
+}
+
+.use-variables h3 {
+  color: #FF4132;
+}
+.use-variables ul li {
+  color: #FF4132;
+}
+.use-variables p {
+  color: #FF4132;
+}
+
+.font-size-addition {
+  font-size: 20px;
+}
+
+.font-size-subtraction {
+  font-size: 20px;
+}
+
+.font-size-multiplication {
+  font-size: 20px;
+}
+
+.font-size-division {
+  font-size: 20px;
+}
+
+.font-color-addition {
+  color: #b0b0b0;
+}
+
+.font-color-subtraction {
+  color: #4f0009;
+}
+
+.font-color-darken {
+  color: #cb0f00;
+}
+
+.font-color-lighten {
+  color: #ffa098;
+}
+
+.background-color-opacify {
+  background-color: rgba(100, 100, 100, 0.8);
+}
+
+.background-color-transparentize {
+  background-color: rgba(100, 100, 100, 0.2);
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
+  margin-bottom: 2rem;
+}
+
+p,
+ul,
+ol,
+li,
+a,
+span {
+  font-family: 'Roboto Slab', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+ul li,
+ol li {
+  list-style: none;
+}
+
+header {
+  background-color: #FF4132;
+  padding: 3rem;
+}
+
+.site-title {
+  font-size: 60px;
+  text-align: center;
+  margin: 0;
+  color: #FFF;
+}
+
+.wrapper {
+  border: 1px solid #999;
+  margin: 0 auto 1rem;
+  width: 50%;
+}
+
+.section {
+  padding: 5rem 0;
+  text-align: center;
+}
+.section.odd {
+  background-color: #EFEFEF;
+}
+
+.btn--primary, .btn--secondary, .btn--facebook, .btn--twitter, .btn--google {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  color: #FFF;
+}
+
+.btn--primary {
+  background-color: #FF4132;
+}
+
+.btn--secondary {
+  background-color: #242B39;
+}
+
+.notification p.error, .notification p.success {
+  font-size: 14px;
+  width: 50%;
+  margin: 0 auto 2rem;
+  padding: 2rem 2rem;
+  background-color: #EFEFEF;
+  border: 1px solid #999;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+/* ****************************************************************************
+ * NOTE: @extend must be used carefully within other directives, like @media.
+ * The following would not work
+ *
+ * .example {
+ *   color: red;
+ * }
+ *
+ * @media screen {
+ *   .example-ext {
+ *      @extend .example
+ *    }
+ * }
+ **************************************************************************** */
+.parent {
+  color: #FF4132;
+}
+.child-1 {
+  color: #000;
+}
+.child-2 {
+  color: #FFF;
+}
+
+.child-3 {
+  text-decoration: underline;
+}
+.parent .child-4 {
+  text-decoration: underline;
+}
+
+.dynamic-text-color {
+  background-color: #EE9009;
+  color: #FFF;
+}
+
+p.dynamic-text-color-2 {
+  color: blue;
+}
+p.dynamic-text-color-2:before {
+  content: "ocean";
+}
+
+.btn--facebook {
+  background-color: #3B5998;
+}
+.btn--facebook:hover {
+  background-color: #1e2e4f;
+}
+
+.btn--twitter {
+  background-color: #55ACEE;
+}
+.btn--twitter:hover {
+  background-color: #147bc9;
+}
+
+.btn--google {
+  background-color: #DD4B39;
+}
+.btn--google:hover {
+  background-color: #96271a;
+}

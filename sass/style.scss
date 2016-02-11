@@ -1,0 +1,282 @@
+//* Compiled and piped to css/style.css by gulp
+
+//* Nested Selectors
+.uppercase {
+    p {
+      text-transform: uppercase;
+    }  
+}
+
+//* Nested Parent Selectors
+.nested {
+
+  &:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .wrapper--white & {
+    color: #FFF;
+  }
+
+  .wrapper--red & {
+    color: #FF4132;
+  }
+}
+
+//* Namespacing
+
+.namespaced {
+  width: 50%;
+  margin: 0 auto;
+  padding: 1rem 0;
+
+  &-font {
+    font: {
+      family: 'Roboto', serif;
+      weight: 700;
+      style: italic;
+    }
+  }
+
+  &-border {
+    border: {
+      width: 2px;
+      color: #FF4132;
+      style: dashed;
+    }
+  }
+}
+
+//* Variables
+$primary-color: #FF4132;
+$secondary-color: #242B39;
+
+.use-variables {
+  h3 {
+    color: $primary-color;
+  }
+
+  ul li {
+    color: $primary-color;
+  }
+
+  p {
+    color: $primary-color;
+  }
+}
+
+//* Number Operations
+
+.font-size-addition {
+  font-size: 10px + 10px;
+}
+
+.font-size-subtraction {
+  font-size: 30px - 10px;
+}
+
+.font-size-multiplication {
+  font-size: 4px * 5;
+}
+
+.font-size-division {
+  font-size: (200px / 10);
+}
+
+//* Color Operations
+
+.font-color-addition {
+  color: #010101 + #AFAFAF;
+}
+
+.font-color-subtraction {
+  color: #EE9009 - #9FCF00;
+}
+
+.font-color-darken {
+  color: darken($primary-color, 20%);
+}
+
+.font-color-lighten {
+  color: lighten($primary-color, 20%);
+}
+
+$bg-color: rgba(100,100,100,0.5);
+
+.background-color-opacify {
+  background-color: opacify($bg-color, 0.3);
+}
+
+.background-color-transparentize {
+  background-color: transparentize($bg-color, 0.3);
+}
+
+//* @import
+@import 'base.page';
+
+.wrapper {
+  // @import 'components.huge-paragraphs';
+}
+
+//* !default
+@import 'settings.section';
+@import 'components.section';
+
+//* @media
+@media screen and (min-width: 45em) {
+  .section {
+    // background-color: $primary-color;
+  }
+}
+
+//* Placeholder Selectors and @extend
+%btn {
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  color: #FFF;
+}
+
+.btn--primary {
+  @extend %btn;
+
+  background-color: $primary-color;
+}
+
+.btn--secondary {
+  @extend %btn;
+
+  background-color: $secondary-color;
+}
+
+//* @extend-Only
+.notification p%status {
+  font-size: 14px;
+  width: 50%;
+  margin: 0 auto 2rem;
+  padding: 2rem 2rem;
+  background-color: #EFEFEF;
+  border: 1px solid #999;
+}
+
+.error {
+  @extend %status;
+
+  color: red;
+}
+
+.success {
+  @extend %status;
+
+  color: green;
+}
+
+/* ****************************************************************************
+ * NOTE: @extend must be used carefully within other directives, like @media.
+ * The following would not work
+ *
+ * .example {
+ *   color: red;
+ * }
+ *
+ * @media screen {
+ *   .example-ext {
+ *      @extend .example
+ *    }
+ * }
+ **************************************************************************** */
+
+//* @at-root
+.parent {
+  color: $primary-color;
+
+  @at-root .child-1 {
+    color: #000;
+  }
+
+  @at-root {
+    .child-2 {
+      color: #FFF;
+    }
+
+    .child-3 {
+      text-decoration: underline;
+    }
+  }
+
+  .child-4 {
+    text-decoration: underline;
+  }
+}
+
+//* @if
+$bg-color: #EE9009;
+
+.dynamic-text-color {
+  background-color: $bg-color;
+
+  @if (lightness($bg-color) > 50) {
+    color: #000;
+  } @else {
+    color: #FFF;
+  }
+}
+
+$type: ocean;
+
+p.dynamic-text-color-2 {
+    &:before {
+      content: '#{$type}';
+    }
+
+  @if $type == ocean {
+    color: blue;
+  } @else if $type == matador {
+    color: red;
+  } @else if $type == monster {
+    color: green;
+  } @else {
+    color: black;
+  }
+}
+
+//* @for
+
+//* @each
+$networkColors: (
+    facebook: #3B5998,
+    twitter: #55ACEE,
+    google: #DD4B39,
+);
+
+@each $network in $networkColors {
+    $name:  nth($network, 1);
+    $color: nth($network, 2);
+
+    .btn--#{$name} {
+        @extend %btn;
+
+        @if(type-of($color) != map) {
+            background-color: $color;
+
+            &:hover {
+                background-color: darken($color, 20%);
+            }
+        }
+    }
+}
+
+//* @while
+
+// $media: screen;
+// $feature: min-width;
+// $value: 45em;
+
+// @media #{$media} and (#{$feature}: #{$value}) {
+//   .section {
+//     background-color: $primary-color;
+//   }
+// }
